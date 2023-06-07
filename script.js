@@ -19,7 +19,7 @@ function calculate ()
     }
 }
 
-function clear ()
+function emptyResult ()
 {
     const result = document.getElementById('result');
     result.value = '';
