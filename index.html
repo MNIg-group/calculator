@@ -7,31 +7,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Simple Calculator</title>
         <link rel="stylesheet" href="./style.css">
+        <script src="./script.js" defer></script>
     </head>
 
     <body>
 
         <form class="calculator">
-            <input type="text" value="0" class="result" placeholder="0" name="displayResult" />
-            <input type="button" value="AC" class="button">
-            <input type="button" value="+/-" class="button">
-            <input type="button" value="%" class="button">
-            <input type="button" value="/" class="button">
-            <input type="button" value="7" class="button">
-            <input type="button" value="8" class="button">
-            <input type="button" value="9" class="button">
-            <input type="button" value="*" class="button">
-            <input type="button" value="4" class="button">
-            <input type="button" value="5" class="button">
-            <input type="button" value="6" class="button">
-            <input type="button" value="-" class="button">
-            <input type="button" value="1" class="button">
-            <input type="button" value="2" class="button">
-            <input type="button" value="3" class="button">
-            <input type="button" value="+" class="button">
-            <input type="button" value="0" class="button b-zero">
-            <input type="button" value="." class="button">
-            <input type="button" value="=" class="button">
+            <input type="text" class="result" placeholder="0" id="result" name="displayResult" readonly />
+            <input type="button" onclick="clear()" value="AC" class="button">
+            <input type="button" onclick="addCharacter('%')" value="%" class="button">
+            <input type="button" onclick="removeLast()" value="<" class="button">
+            <input type="button" onclick="addCharacter('/')" value="/" class="button">
+            <input type="button" onclick="addCharacter('7')" value="7" class="button">
+            <input type="button" onclick="addCharacter('8')" value="8" class="button">
+            <input type="button" onclick="addCharacter('9')" value="9" class="button">
+            <input type="button" onclick="addCharacter('-')" value="-" class="button">
+            <input type="button" onclick="addCharacter('4')" value="4" class="button">
+            <input type="button" onclick="addCharacter('5')" value="5" class="button">
+            <input type="button" onclick="addCharacter('6')" value="6" class="button">
+            <input type="button" onclick="addCharacter('+')" value="+" class="button">
+            <input type="button" onclick="addCharacter('1')" value="1" class="button">
+            <input type="button" onclick="addCharacter('2')" value="2" class="button">
+            <input type="button" onclick="addCharacter('3')" value="3" class="button">
+            <input type="button" onclick="addCharacter('*')" value="*" class="button">
+            <input type="button" onclick="addCharacter('0')" value="0" class="button b-zero">
+            <input type="button" onclick="addCharacter('.')" value="." class="button">
+            <input type="button" onclick="changeSign()" value="+/-" class="button">
+            <input type="button" onclick="calculate()" value="=" class="button">
         </form>
 
     </body>
