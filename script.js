@@ -1,38 +1,70 @@
-function addCharacter (character)
-{
-    const result = document.getElementById('result');
-    result.value += character;
-}
+let solutionValue = null;
+let inputResult = null;
+const buttons = document.querySelectorAll('.button');
+const solution = document.getElementById('solution');
+const result = document.getElementById('inputResult');
 
-function calculate ()
-{
-    const result = document.getElementById('result');
-    const expression = result.value;
 
-    try
+function updateSolution ()
+{
+    solution.value = solutionValue;
+    if (solutionValue.length > 9)
     {
-        const calculation = new Function('return ' + expression);
-        result.value = calculation();
-    } catch (error)
-    {
-        result.value = 'Error';
+        solution.value = solutionValue.substring(0, 9);
     }
 }
 
-function emptyResult ()
+function clickButton ()
 {
-    const result = document.getElementById('result');
-    result.value = '';
+    for (let i = 0; i < buttons.length; i++)
+    {
+        buttons[ i ].addEventListener('click', function ()
+        {
+            if (buttons[ i ].classList.contains('operand') || buttons[ i ].classList.contains('operator'))
+            {
+                addCharacter(buttons[ i ].value);
+
+            } else if (buttons[ i ].classList.contains('equals'))
+            {
+                finalResult();
+
+            } else if (buttons[ i ].classList.contains('dot'))
+            {
+                addCharacter(buttons[ i ].value);
+
+            }
+        }
+        )
+    }
 }
 
 function removeLast ()
 {
-    const result = document.getElementById('result');
     result.value = result.value.slice(0, -1);
 }
-
+function emptyResult ()
+{
+    result.value = null;
+    solution.value = null;
+}
 function changeSign ()
 {
-    const result = document.getElementById('result');
+
     result.value = result.value * -(1);
+
 }
+function addCharacter (character)
+{
+    result.value += character;
+}
+
+function finalResult ()
+{
+    let output = String(result.value);
+    solutionValue = (Function("return " + output)());
+
+    updateSolution();
+}
+
+
+clickButton();

@@ -13,27 +13,32 @@
     <body>
 
         <form class="calculator">
-            <input type="text" class="result" placeholder="0" id="result" name="displayResult" readonly />
+            <div class="result">
+                <input id="solution" placeholder="0">
+                <input id="inputResult" placeholder="0">
+            </div>
             <input type="button" onclick="emptyResult()" value="AC" class="button">
-            <input type="button" onclick="addCharacter('%')" value="%" class="button">
+            <input type="button" value="%" class="button operator">
             <input type="button" onclick="removeLast()" value="<" class="button">
-            <input type="button" onclick="addCharacter('/')" value="/" class="button">
-            <input type="button" onclick="addCharacter('7')" value="7" class="button">
-            <input type="button" onclick="addCharacter('8')" value="8" class="button">
-            <input type="button" onclick="addCharacter('9')" value="9" class="button">
-            <input type="button" onclick="addCharacter('-')" value="-" class="button">
-            <input type="button" onclick="addCharacter('4')" value="4" class="button">
-            <input type="button" onclick="addCharacter('5')" value="5" class="button">
-            <input type="button" onclick="addCharacter('6')" value="6" class="button">
-            <input type="button" onclick="addCharacter('+')" value="+" class="button">
-            <input type="button" onclick="addCharacter('1')" value="1" class="button">
-            <input type="button" onclick="addCharacter('2')" value="2" class="button">
-            <input type="button" onclick="addCharacter('3')" value="3" class="button">
-            <input type="button" onclick="addCharacter('*')" value="*" class="button">
-            <input type="button" onclick="addCharacter('0')" value="0" class="button b-zero">
-            <input type="button" onclick="addCharacter('.')" value="." class="button">
+            <input type="button" value="/" class="button operator">
+            <input type="button" value="(" class="button operator special-1">
+            <input type="button" value=")" class="button operator special-2">
+            <input type="button" value="7" class="button operand">
+            <input type="button" value="8" class="button operand">
+            <input type="button" value="9" class="button operand">
+            <input type="button" value="-" class="button operator">
+            <input type="button" value="4" class="button operand">
+            <input type="button" value="5" class="button operand">
+            <input type="button" value="6" class="button operand">
+            <input type="button" value="+" class="button operator">
+            <input type="button" value="1" class="button operand">
+            <input type="button" value="2" class="button operand">
+            <input type="button" value="3" class="button operand">
+            <input type="button" value="*" class="button operator">
+            <input type="button" value="0" class="button b-zero operator">
+            <input type="button" value="." class="button dot">
             <input type="button" onclick="changeSign()" value="+/-" class="button">
-            <input type="button" onclick="calculate()" value="=" class="button">
+            <input type="button" value="=" class="button equals">
         </form>
 
     </body>
